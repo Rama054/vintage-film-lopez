@@ -1,9 +1,10 @@
+import { Children } from 'react';
 import './ItemListContainer.css'
 
 function ItemListContainer(prop) {
     return (
         <div className="catalogo">
-            <h1>{prop.getting}</h1>
+            {prop.children}
         </div>
     );
   }

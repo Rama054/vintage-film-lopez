@@ -1,0 +1,51 @@
+.ItemCount{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 150px;
+    height: 100px;
+    border: 1px solid rgb(223, 223, 223);
+    /* box-shadow: 0px 0px 20px 2px rgb(110, 161, 238);*/
+    margin: 10px;
+}
+
+.count{
+    text-align: center;
+    background-color: rgb(243, 236, 236);
+    padding: 5px 10px;
+}
+
+.controllerContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttom{
+    width: 20px;
+    height: 20px;
+    padding: 3px 15px;
+    background-color: rgb(61, 61, 218);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.buttom img{
+    width: 15px;
+    height: 15px;
+    user-select: none; 
+}
+
+.addCart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(66, 172, 75);
+    padding: 2px 10px;
+    border-radius: 10px;
+    height: 25px;
+    cursor: pointer;
+    margin: 5px;
+}
