@@ -1,0 +1,27 @@
+.lista{
+    display: flex;
+    gap: 30px;
+}
+
+.item{    
+    width: 300px;
+    border: solid rgb(56, 55, 55) 1px;
+    cursor: pointer;
+}
+
+.img-articulo{
+    width: 300px;
+    height: 225px;
+}
+
+.data-articulo{
+    background-color: cyan;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.precio-articulo{
+    text-align: center;
+    font-size: 50px;
+}
