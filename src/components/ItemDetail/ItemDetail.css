@@ -1,0 +1,30 @@
+.item-detail{
+    display: flex;
+    width: 900px;
+    gap: 20px;
+}
+
+.data-articulo-detail{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.img-articulo-detail{
+    width: 500px;
+}
+
+.titulo-articulo-detail{
+    font-size: 30px;
+    color: white;
+}
+
+.descrip-articulo-detail{
+    font-size: 20px;
+    color: white;
+}
+
+.precio-articulo-detail{
+    font-size: 50px;
+    color: white;
+}

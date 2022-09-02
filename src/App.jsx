@@ -1,6 +1,7 @@
 import NavBar from "./components/navBar/NavBar"
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemCount from './components/ItemCount/ItemCount'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import "./App.css"
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <ItemCount stock={50} initial={1}/>
         <ItemCount stock={20} initial={1}/>
       </ItemListContainer>
+      <ItemDetailContainer/>
     </div>
   );
 }

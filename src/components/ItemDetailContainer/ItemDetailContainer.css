@@ -1,0 +1,7 @@
+.itemDetail{
+    background-color: rgb(66, 53, 243);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
