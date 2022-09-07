@@ -1,3 +1,4 @@
+
 import './ItemDetail.css'
 
 function ItemDetail({details}) {
@@ -9,6 +10,7 @@ function ItemDetail({details}) {
                 <p className="descrip-articulo-detail">{details.descripcion}</p>
                 <h5 className="precio-articulo-detail">${details.precio}</h5>
             </div>
+            
         </div> 
     );
   }

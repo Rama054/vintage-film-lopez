@@ -1,11 +1,13 @@
-import './ItemListContainer.css'
+//import './CategoryContainer.css'
 import ItemList from '../ItemList/ItemList'
+import { useParams } from "react-router-dom"
 import React, {useState, useEffect} from 'react'
 
 import arregloProductos from "../../DataBase/baseDatos"
 
+function CategoryContainer(prop) {
 
-function ItemListContainer(prop) {
+    const {producto} = useParams();
 
     const [items, setItems] = useState([])
 
@@ -20,13 +22,15 @@ function ItemListContainer(prop) {
         const funcionAsincronica = async() => {
             try{
                 const listado = await obtenerProductos()
-                setItems(listado)
+                const listadoFiltrado = listado.filter(item => item.categoria === producto)
+                setItems(listadoFiltrado)
+                //console.log(listado)
             } catch( error ){
                 console.log('hubo un error')
             }
         }
         funcionAsincronica()
-    },[])
+    },[producto])
 
 
 
@@ -38,4 +42,4 @@ function ItemListContainer(prop) {
     );
   }
   
-  export default ItemListContainer;
+  export default CategoryContainer;

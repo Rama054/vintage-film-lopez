@@ -1,14 +1,27 @@
 import './Item.css'
+import ItemCount from '../ItemCount/ItemCount'
+import { Link } from "react-router-dom"
+
+const estilos = {
+    display:'flex',
+    flexDirection:'column',
+    width:'100%',
+    justifyContent:'center',
+}
 
 function Item({item}) {
     return (
         <div className="item">
-            <img className="img-articulo" src={item.img} alt="foto" />
-            <div className="data-articulo">
-                <h1 className="titulo-articulo">{item.titulo}</h1>
-                <p className="descrip-articulo">{item.descripcion}</p>
-                <h5 className="precio-articulo">${item.precio}</h5>
-                {/* <p className="id-articulo">{item.id}</p> */}
+            <Link to={'/item/'+item.id}>
+                <img className="img-articulo" src={item.img} alt="foto" />
+                <div className="data-articulo">
+                    <span className="titulo-articulo">{item.titulo}</span>
+                    <span className="descrip-articulo">{item.descripcion}</span>
+                </div>
+            </Link>
+            <div style={estilos}>
+                <span className="precio-articulo">${item.precio}</span>
+                <ItemCount stock={10} initial={1}/>
             </div>
         </div>
     );

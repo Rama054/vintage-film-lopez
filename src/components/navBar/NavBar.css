@@ -26,16 +26,15 @@
     font-weight: 800;
 }
 
-.nav-item a{
+.list-item a{
     color: aliceblue;
-    text-decoration: none;
-    
+    text-decoration: none;    
 }
 
 .nav-item:hover{
     background-color: aliceblue;
 }
-.nav-item:hover a{
+.nav-item:hover{
     color: black;
 }
 
