@@ -2,14 +2,20 @@ import React, {useState} from 'react'
 import './itemCount.css'
 import menos from '../../img/signo-menos.png'
 import mas from '../../img/signo-mas.png'
+import { Link } from "react-router-dom"
 
-function ItemCount({stock,initial}){
+function ItemCount({obtenerValor,stock,initial}){
     const [cantidad,setCantidad] = useState(initial)
 
     function onAdd(operando){
         if((cantidad + operando) <= stock && (cantidad+operando) >= initial)
             setCantidad(cantidad+operando)
     }
+
+    function carrito(){
+        obtenerValor(cantidad)
+    }
+
 
     return(
         <div className="ItemCount">
@@ -22,9 +28,11 @@ function ItemCount({stock,initial}){
                     <img src={mas} alt="" />
                 </div>
             </div>
-            <div className="addCart">
-                <span className="textCart">Agregar al carrito</span>
-            </div>
+            <Link to="/cart">
+                <div onClick={carrito} className="addCart">
+                    <span className="textCart">Agregar al carrito</span>
+                </div>
+            </Link>
         </div>
     )
 
