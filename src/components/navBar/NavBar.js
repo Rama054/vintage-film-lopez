@@ -27,7 +27,9 @@ function NavBar() {
                         <li className='nav-item'>Contacto</li>
                     </Link>
                 </ul>
-                <CartWidget/>
+                <Link to={'/cart'}>
+                    <CartWidget/>
+                </Link>
             </nav>
         </header> 
         

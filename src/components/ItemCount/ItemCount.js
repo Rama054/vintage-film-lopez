@@ -4,6 +4,8 @@ import menos from '../../img/signo-menos.png'
 import mas from '../../img/signo-mas.png'
 import { Link } from "react-router-dom"
 
+
+
 function ItemCount({obtenerValor,stock,initial}){
     const [cantidad,setCantidad] = useState(initial)
 
