@@ -1,0 +1,30 @@
+.carrito{
+    width: 500px;
+    margin: 0 auto;
+}
+
+.articulo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    height: 100px;
+    width: 100%;
+}
+
+.imgProductCarrito{
+    width: 100px;
+    height: 100px;
+}
+
+.productoNombre{
+    width: 200px;
+}
+
+.trashIcon{
+    width: 25px;
+    cursor: pointer;
+    padding: 5px;
+    background-color: rgb(235, 34, 34);
+    border-radius: 5px;
+}

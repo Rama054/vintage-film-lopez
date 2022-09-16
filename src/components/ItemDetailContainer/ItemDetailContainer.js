@@ -24,7 +24,6 @@ function ItemDetailContainer(){
                 const listado = await getItem()
                 var ItemFiltrado = listado.filter(item => item.id === idItem)
                 setDetailItem(ItemFiltrado[0])
-                console.log(ItemFiltrado[0])
                 
             } catch( error ){
                 console.log('hubo un error')

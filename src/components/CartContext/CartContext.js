@@ -20,9 +20,15 @@ export const CartProvider = ({children}) => {
         return productCartList.find( item => id === item.id)
     }
 
+    const removeProduct = (product) =>{
+        const newList = productCartList.filter( item => item.id !== product.id)
+        setProductCartList(newList)
+    }
+
+
 
     return(
-        <CartContext.Provider value={{productCartList, addProduct }}>
+        <CartContext.Provider value={{productCartList, addProduct, removeProduct}}>
             {children}
         </CartContext.Provider>
     )
