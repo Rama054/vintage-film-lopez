@@ -2,8 +2,11 @@
 import ItemList from '../ItemList/ItemList'
 import { useParams } from "react-router-dom"
 import React, {useState, useEffect} from 'react'
+import {collection, query, getDocs, where} from 'firebase/firestore'
+import db from '../../DataBase/bdFireBase'
 
-import arregloProductos from "../../DataBase/baseDatos"
+//import arregloProductos from "../../DataBase/baseDatos"
+
 
 function CategoryContainer(prop) {
 
@@ -11,27 +14,20 @@ function CategoryContainer(prop) {
 
     const [items, setItems] = useState([])
 
-    const obtenerProductos = () => {
-        return new Promise( (resolve, reject) => {
-            resolve(arregloProductos);
-        } );
-    }
-  
-
-    useEffect( () => {
-        const funcionAsincronica = async() => {
-            try{
-                const listado = await obtenerProductos()
-                const listadoFiltrado = listado.filter(item => item.categoria === producto)
-                setItems(listadoFiltrado)
-                //console.log(listado)
-            } catch( error ){
-                console.log('hubo un error')
-            }
+    useEffect(()=>{
+        async function getData(){
+            const consulta = query(
+                collection(db,"items"),
+                where("categoryId","==",producto)
+            );
+            getDocs(consulta).then((item)=>{
+                if(item.size==0)
+                    console.log('no results')
+                setItems(item.docs.map((doc)=>({id:doc.id, ...doc.data()})))
+            }) 
         }
-        funcionAsincronica()
+        getData()
     },[producto])
-
 
 
 

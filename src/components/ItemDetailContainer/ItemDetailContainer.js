@@ -1,16 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
-
+import {getDoc, doc} from 'firebase/firestore'
 import './ItemDetailContainer.css'
 import { useParams } from "react-router-dom"
 
-import arregloProductos from "../../DataBase/baseDatos"
-
-const getItem = () => {
-    return new Promise( (resolve, reject) => {
-        resolve(arregloProductos);
-    } );
-}
+import db from '../../DataBase/bdFireBase'
 
 
 function ItemDetailContainer(){
@@ -18,21 +12,18 @@ function ItemDetailContainer(){
 
     const [detailItem, setDetailItem] = useState([])
 
-    useEffect( () => {
-        const funcionAsincronica = async() => {
-            try{
-                const listado = await getItem()
-                var ItemFiltrado = listado.filter(item => item.id === idItem)
-                setDetailItem(ItemFiltrado[0])
-                
-            } catch( error ){
-                console.log('hubo un error')
+    useEffect(()=>{
+        async function getData(){
+            const query = doc(db,"items",idItem);
+            let respuesta = await getDoc(query)
+            const producto = {
+                ...respuesta.data(),
+                id: respuesta.id
             }
+            setDetailItem(producto)
         }
-        funcionAsincronica()
-        
+        getData()
     },[idItem])
-
 
 
     return (

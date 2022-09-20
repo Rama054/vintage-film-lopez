@@ -13,15 +13,15 @@ function Item({item}) {
     return (
         <div className="item">
             <Link to={'/item/'+item.id}>
-                <img className="img-articulo" src={item.img} alt="foto" />
+                <img className="img-articulo" src={item.imageId} alt="foto" />
                 <div className="data-articulo">
-                    <span className="titulo-articulo">{item.titulo}</span>
-                    <span className="descrip-articulo">{item.descripcion}</span>
+                    <span className="titulo-articulo">{item.title}</span>
+                    <span className="descrip-articulo">{item.description}</span>
                 </div>
             </Link>
             <div style={estilos}>
-                <span className="precio-articulo">${item.precio}</span>
-                <ItemCount stock={10} initial={1}/>
+                <span className="precio-articulo">${item.price}</span>
+                <ItemCount stock={item.stock} initial={1}/>
             </div>
         </div>
     );

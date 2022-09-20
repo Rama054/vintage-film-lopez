@@ -1,14 +1,11 @@
-import './ItemListContainer.css'
-import ItemList from '../ItemList/ItemList'
-import React, {useState, useEffect} from 'react'
-
-
+import React, { useState } from "react";
 import {collection, getDocs} from 'firebase/firestore'
+import { useEffect } from "react";
 import db from '../../DataBase/bdFireBase'
 
-function ItemListContainer(prop) {
 
-    const [items, setItems] = useState([])
+function PaginaFirebase(){
+    const [Productos,setProductos] = useState([])
 
     useEffect(()=>{
         async function getData(){
@@ -16,18 +13,14 @@ function ItemListContainer(prop) {
             let respuesta = await getDocs(query)
             const docs = respuesta.docs
             const data = docs.map(doc => {return {...doc.data(), id: doc.id}})
-            setItems(data)
+            setProductos(data)
         }
         getData()
     },[])
 
+    return(
+        <div>PaginaFirebase</div>
+    )
+}
 
-
-    return (
-        <div className="catalogo">
-            <ItemList lista={items}/>
-        </div>
-    );
-  }
-  
-  export default ItemListContainer;
+export default PaginaFirebase;
