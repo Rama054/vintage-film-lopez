@@ -19,16 +19,19 @@ export const CartProvider = ({children}) => {
     function isInCart(id){
         return productCartList.find( item => id === item.id)
     }
-
+    
     const removeProduct = (product) =>{
-        const newList = productCartList.filter( item => item.id !== product.id)
+        //const copyArray = [...productCartList]
+        const newList = productCartList.filter( item => item.id !== product)
         setProductCartList(newList)
     }
 
-
+    const clearCart = () =>{
+        setProductCartList([])
+    }
 
     return(
-        <CartContext.Provider value={{productCartList, addProduct, removeProduct}}>
+        <CartContext.Provider value={{productCartList, addProduct, removeProduct, clearCart}}>
             {children}
         </CartContext.Provider>
     )

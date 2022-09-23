@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import './itemCount.css'
 import menos from '../../img/signo-menos.png'
 import mas from '../../img/signo-mas.png'
-import { Link } from "react-router-dom"
 
 
 
@@ -30,11 +29,10 @@ function ItemCount({obtenerValor,stock,initial}){
                     <img src={mas} alt="" />
                 </div>
             </div>
-            <Link to="/cart">
-                <div onClick={carrito} className="addCart">
-                    <span className="textCart">Agregar al carrito</span>
-                </div>
-            </Link>
+            
+            <div onClick={carrito} className="addCart">
+                <span className="textCart">Agregar al carrito</span>
+            </div>
         </div>
     )
 

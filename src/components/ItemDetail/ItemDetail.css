@@ -28,3 +28,32 @@
     font-size: 50px;
     color: white;
 }
+
+.botonesComprar{
+    display: flex;
+}
+
+.botonesComprar .seguir{
+    background-color: rgb(24, 163, 24);
+}
+
+.botonesComprar .seguir:hover{
+    background-color: rgb(14, 100, 14);
+}
+
+
+.botonesComprar .terminar{
+    background-color: rgb(190, 72, 36);
+}
+
+.botonesComprar .terminar:hover{
+    background-color: rgb(117, 42, 19);
+}
+
+
+.botonesComprar *{
+    padding: 5px;
+    text-decoration-line: none;
+    color: white;
+    border-radius: 5px;
+}

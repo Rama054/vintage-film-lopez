@@ -1,5 +1,4 @@
 import './Item.css'
-import ItemCount from '../ItemCount/ItemCount'
 import { Link } from "react-router-dom"
 
 const estilos = {
@@ -21,7 +20,6 @@ function Item({item}) {
             </Link>
             <div style={estilos}>
                 <span className="precio-articulo">${item.price}</span>
-                <ItemCount stock={item.stock} initial={1}/>
             </div>
         </div>
     );

@@ -1,6 +1,31 @@
+.cartWrapper{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.vistaCarritoVacio{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+
+.vistaCarritoVacio *{
+    text-decoration: none;
+}
+
+.retornarTienda{
+    background-color: rgb(26, 97, 190);
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+}
+
 .carrito{
     width: 500px;
-    margin: 0 auto;
 }
 
 .articulo{
@@ -27,4 +52,38 @@
     padding: 5px;
     background-color: rgb(235, 34, 34);
     border-radius: 5px;
+}
+
+.vaciar{
+    background-color: rgb(235, 34, 34);
+    border-radius: 5px;
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 5px;
+    cursor: pointer;    
+}
+
+.vaciar:hover{
+    background-color: rgb(194, 34, 34);
+}
+
+.formulario{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario form{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+form div{
+    display: flex;
+    flex-direction: column;
 }
