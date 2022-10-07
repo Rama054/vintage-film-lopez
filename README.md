@@ -19,6 +19,3 @@ En la barra de navegacion se pueden filtrar los productos por categoria: Films, 
 Un vez seleccionados los items deseados, para generar la orden de compra, se debe completar el formulario con los datos de nombre, email y telefono, generando asi una orden de compra, indicado la finalizacion del proceso.
 
 ![image](https://github.com/Rama054/vintage-film-lopez/blob/main/proceso.gif)
-Explicación
-https://github.com/Rama054/vintage-film-lopez/blob/main/proceso.gif
- Esta URL de enlace es la URL de enlace que se muestra en github después de cargar la imagen gif.
