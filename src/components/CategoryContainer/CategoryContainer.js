@@ -5,8 +5,6 @@ import React, {useState, useEffect} from 'react'
 import {collection, query, getDocs, where} from 'firebase/firestore'
 import db from '../../DataBase/bdFireBase'
 
-//import arregloProductos from "../../DataBase/baseDatos"
-
 
 function CategoryContainer(prop) {
 
@@ -21,7 +19,7 @@ function CategoryContainer(prop) {
                 where("categoryId","==",producto)
             );
             getDocs(consulta).then((item)=>{
-                if(item.size==0)
+                if(item.size===0)
                     console.log('no results')
                 setItems(item.docs.map((doc)=>({id:doc.id, ...doc.data()})))
             }) 

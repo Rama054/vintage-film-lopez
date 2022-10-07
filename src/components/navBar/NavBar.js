@@ -23,9 +23,6 @@ function NavBar() {
                     <Link to="/category/lentes">
                         <li className='nav-item'>Lentes</li>
                     </Link>
-                    <Link to="/">
-                        <li className='nav-item'>Contacto</li>
-                    </Link>
                 </ul>
                 <Link to={'/cart'}>
                     <CartWidget/>

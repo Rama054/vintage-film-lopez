@@ -4,11 +4,13 @@ import './Cart.css'
 import trashBin from '../../img/icons/trashBin.svg'
 import { collection, getFirestore, addDoc } from "firebase/firestore";
 import { Link } from "react-router-dom"
+import Modal from '../Modal/Modal'
+import { useState } from "react";
 
 function Cart() {
 
     const {productCartList, removeProduct, clearCart} = useContext(CartContext)
-
+    const [idOrden, setIdOrden] = useState('')
     function calcularTotal(){
         let acumulador = 0 
         for( let producto of productCartList){
@@ -20,8 +22,6 @@ function Cart() {
     function cartEmpty(){
         return productCartList.length === 0 ? true : false
     }
-
-
 
     function sendOrder(e){
         e.preventDefault();
@@ -47,15 +47,8 @@ function Cart() {
         const db = getFirestore();
         
         const ordersCollections = collection(db,"orders")
-        addDoc(ordersCollections,order).then(({id}) => alert("ID de orden",id)) 
+        addDoc(ordersCollections,order).then(({id}) => setIdOrden(id))
     }
-
-
-
-    
-
-
-
 
     
     return (
@@ -101,29 +94,27 @@ function Cart() {
                     <form onSubmit={sendOrder} action="">
                         <div>
                             <label htmlFor="nombre">Nombre</label>
-                            <input type="text" id="nombre" placeholder="Nombre"/>
+                            <input type="text" pattern='[A-Za-z]{5,}' id="nombre" placeholder="Nombre" required/>
                         </div>
                         <div>
                             <label htmlFor="email">Email</label>
-                            <input type="text" id="email" placeholder="Email"/>
+                            <input type="email" id="email" placeholder="Email" required/>
                         </div>
                         <div>
                             <label htmlFor="telefono">Telefono</label>
-                            <input type="tel" id="telefono" placeholder="Telefono"/>
+                            <input type="tel" pattern='\d{8,}' id="telefono" placeholder="Telefono" required/>
                         </div>
                         <input type="submit" value="Comprar!" />
                     </form>
                 </div>
             </div>
-
-
+        }
+        {
+            idOrden && 
+            <Modal idOrden={idOrden}/>
         }
         </>
 
-
-
-
-            
 
         
     );
